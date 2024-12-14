@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,10 @@ public class BankService {
             System.out.println("your balance is insufficient");
         }
         
+    }
+
+    public List<Account> getAccount(){
+        return accountRepository.findAll();
     }
     
 }

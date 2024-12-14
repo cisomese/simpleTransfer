@@ -6,7 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.model.Account;
 import com.example.demo.service.BankService;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @RestController
 @RequestMapping("api/bank")
@@ -28,4 +34,9 @@ public class BankController {
         
         return "Transaction successful";
     }
+    @GetMapping("/account")
+    public List<Account> getAccount() {
+        return bankService.getAccount();
+    }
+    
 }
